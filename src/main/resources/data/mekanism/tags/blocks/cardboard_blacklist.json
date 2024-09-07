@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "enhanced_storage:block_16384k_fluid",
+    "enhanced_storage:block_65536k_fluid",
+    "enhanced_storage:block_262144k_fluid",
+    "enhanced_storage:block_1048576k_fluid",
+    "enhanced_storage:block_256k",
+    "enhanced_storage:block_1024k",
+    "enhanced_storage:block_4096k",
+    "enhanced_storage:block_16384k",
+    "enhanced_storage:advanced_exporter",
+    "enhanced_storage:advanced_importer",
+    "enhanced_storage:iron_crafter",
+    "enhanced_storage:gold_crafter",
+    "enhanced_storage:diamond_crafter",
+    "enhanced_storage:netherite_crafter"
+  ]
+}

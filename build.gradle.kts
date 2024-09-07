@@ -15,6 +15,9 @@ repositories {
     maven(url = "https://thedarkcolour.github.io/KotlinForForge/") {
         name = "KotlinForForge"
     }
+    maven(url = "https://maven.blamejared.com/") {
+        name = "vazkii"
+    }
     maven(url = "https://maven.tterrag.com/") {
         name = "TOP"
     }
@@ -27,11 +30,16 @@ dependencies {
     "minecraft"("net.minecraftforge:forge:1.16.5-36.2.42")
     implementation(fg.deobf("curse.maven:refined-storage-243076:3807951"))
     implementation("thedarkcolour:kotlinforforge:1.17.0")
+    compileOnly(fg.deobf("mcjty.theoneprobe:TheOneProbe-1.16:1.16-3.1.4-22:api"))
+    runtimeOnly(fg.deobf("mcjty.theoneprobe:TheOneProbe-1.16:1.16-3.1.4-22"))
+    runtimeOnly(fg.deobf("mezz.jei:jei-1.16.5:7.7.1.126"))
+    compileOnly(fg.deobf("vazkii.autoreglib:AutoRegLib:1.6-49.90"))
+    compileOnly(fg.deobf("vazkii.quark:Quark:r2.4-321.2012"))
     testImplementation(kotlin("test"))
 }
 
 minecraft {
-    mappings("official", "1.16.5")
+    mappings("snapshot", "20210309-1.16.5")
     accessTransformer(file("src/main/resources/META-INF/accesstransformer.cfg"))
 
     runs {
