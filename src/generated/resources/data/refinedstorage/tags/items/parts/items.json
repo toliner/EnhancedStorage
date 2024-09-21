@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "#refinedstorage:parts/items/256k",
+    "#refinedstorage:parts/items/1024k",
+    "#refinedstorage:parts/items/4096k",
+    "#refinedstorage:parts/items/16m",
+    "#refinedstorage:parts/items/65m",
+    "#refinedstorage:parts/items/262m",
+    "#refinedstorage:parts/items/1048m",
+    "#refinedstorage:parts/items/2147m",
+    "#refinedstorage:parts/items/infinite"
+  ]
+}
