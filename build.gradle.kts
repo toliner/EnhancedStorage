@@ -59,7 +59,7 @@ minecraft {
             property("forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP")
             property("forge.logging.console.level", "debug")
 
-            args("--mod", "enhanced_storage", "--all", "--output", "src/generated/resources/", "--existing", "src/main/resources/")
+            args("--mod", "enhanced_storage", "--all", "--output", "../src/generated/resources/", "--existing", "../src/main/resources/")
 
             mods {
                 create("enhanced_storage") {
@@ -68,6 +68,10 @@ minecraft {
             }
         }
     }
+}
+
+sourceSets {
+    main.get().resources.srcDir("src/generated/resources")
 }
 
 kotlin {

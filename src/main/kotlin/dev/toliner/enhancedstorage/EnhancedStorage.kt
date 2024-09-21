@@ -1,5 +1,6 @@
 package dev.toliner.enhancedstorage
 
+import dev.toliner.enhancedstorage.datagen.DataGenerators
 import edivad.extrastorage.setup.ClientSetup
 import edivad.extrastorage.setup.ESLootFunctions
 import edivad.extrastorage.setup.ModSetup
@@ -10,6 +11,7 @@ import net.minecraftforge.fml.DistExecutor.SafeRunnable
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
+import net.minecraftforge.fml.event.lifecycle.GatherDataEvent
 import org.apache.logging.log4j.LogManager
 import thedarkcolour.kotlinforforge.KotlinModLoadingContext
 
@@ -31,6 +33,9 @@ object EnhancedStorage {
             ModSetup.init(
                 event
             )
+        }
+        KotlinModLoadingContext.get().getKEventBus().addListener { event: GatherDataEvent ->
+            DataGenerators.gatherData(event)
         }
     }
 }
