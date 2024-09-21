@@ -1,0 +1,17 @@
+version: 35
+jobs:
+- name: GitHub Sync
+  steps:
+  - !PushRepository
+    name: Push to GitHub
+    remoteUrl: https://github.com/toliner/EnhancedStorage
+    passwordSecret: gh_token
+    force: false
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  triggers:
+  - !BranchUpdateTrigger
+    branches: gladiia
+  retryCondition: never
+  maxRetries: 3
+  retryDelay: 30
+  timeout: 3600
