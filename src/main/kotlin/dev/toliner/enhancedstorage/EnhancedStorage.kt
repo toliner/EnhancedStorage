@@ -21,11 +21,9 @@ import net.minecraftforge.event.RegistryEvent
 import net.minecraftforge.eventbus.api.SubscribeEvent
 import net.minecraftforge.fml.DistExecutor
 import net.minecraftforge.fml.ModLoadingContext
-import net.minecraftforge.fml.client.registry.ClientRegistry
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber
 import net.minecraftforge.fml.config.ModConfig
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
 import net.minecraftforge.fml.event.lifecycle.GatherDataEvent
 import net.minecraftforge.fml.loading.FMLPaths
@@ -52,9 +50,7 @@ object EnhancedStorage {
             ModSetup.init(event)
             setup(event)
         }
-        KotlinModLoadingContext.get().getKEventBus().addListener { event: FMLClientSetupEvent ->
-            doClientStuff(event)
-        }
+
         KotlinModLoadingContext.get().getKEventBus().addListener { event: GatherDataEvent ->
             DataGenerators.gatherData(event)
         }
@@ -71,10 +67,6 @@ object EnhancedStorage {
     private fun setup(event: FMLCommonSetupEvent) {
         UniversalGrid.NETWORK_HANDLER.register()
         UniversalGrid.RSAPI.gridManager.add(WirelessUniversalGridGridFactory.ID, WirelessUniversalGridGridFactory())
-    }
-
-    private fun doClientStuff(event: FMLClientSetupEvent) {
-        ClientRegistry.registerKeyBinding(ModKeyBindings.OPEN_WIRELESS_UNIVERSAL_GRID)
     }
 
     @SubscribeEvent

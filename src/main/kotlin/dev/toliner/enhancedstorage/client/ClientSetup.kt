@@ -1,6 +1,7 @@
 package dev.toliner.enhancedstorage.client
 
 import com.YTrollman.UniversalGrid.registry.ModItems
+import com.YTrollman.UniversalGrid.registry.ModKeyBindings
 import com.refinedmods.refinedstorage.apiimpl.API
 import com.refinedmods.refinedstorage.item.property.NetworkItemPropertyGetter
 import com.refinedmods.refinedstorage.render.BakedModelOverrideRegistry
@@ -23,6 +24,7 @@ import net.minecraft.util.ResourceLocation
 import net.minecraftforge.client.event.ModelBakeEvent
 import net.minecraftforge.eventbus.api.SubscribeEvent
 import net.minecraftforge.fml.ModList
+import net.minecraftforge.fml.client.registry.ClientRegistry
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
 
@@ -36,7 +38,6 @@ class ClientSetup {
 
     @SubscribeEvent
     fun initClient(event: FMLClientSetupEvent) {
-        val isQuarkLoaded = ModList.get().isLoaded("quark")
 
         // register universal grid item property
         ItemModelsProperties.registerProperty(
@@ -50,8 +51,12 @@ class ClientSetup {
             NetworkItemPropertyGetter()
         )
 
+        ClientRegistry.registerKeyBinding(ModKeyBindings.OPEN_WIRELESS_UNIVERSAL_GRID)
+
         // register renderers for crafters
-        val crafterScreen = if (isQuarkLoaded) ::AdvancedCrafterScreenQuark else ::AdvancedCrafterScreen
+        val crafterScreen = if (ModList.get().isLoaded("quark")) {
+            ::AdvancedCrafterScreenQuark
+        } else ::AdvancedCrafterScreen
         for (tier in CrafterTier.entries) {
             ScreenManager.registerFactory(
                 Registration.CRAFTER_CONTAINER.getValue(tier).get(),
