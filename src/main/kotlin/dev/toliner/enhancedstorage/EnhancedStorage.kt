@@ -7,7 +7,6 @@ import com.YTrollman.UniversalGrid.item.WirelessUniversalGridItem
 import com.YTrollman.UniversalGrid.registry.ModItems
 import com.YTrollman.UniversalGrid.registry.ModKeyBindings
 import com.refinedmods.refinedstorage.screen.KeyInputListener
-import dev.toliner.enhancedstorage.client.ClientSetup
 import dev.toliner.enhancedstorage.datagen.DataGenerators
 import edivad.extrastorage.setup.ESLootFunctions
 import edivad.extrastorage.setup.ModSetup
@@ -15,11 +14,9 @@ import edivad.extrastorage.setup.Registration
 import net.minecraft.client.Minecraft
 import net.minecraft.item.Item
 import net.minecraft.util.ResourceLocation
-import net.minecraftforge.api.distmarker.Dist
 import net.minecraftforge.client.event.InputEvent.KeyInputEvent
 import net.minecraftforge.event.RegistryEvent
 import net.minecraftforge.eventbus.api.SubscribeEvent
-import net.minecraftforge.fml.DistExecutor
 import net.minecraftforge.fml.ModLoadingContext
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber
@@ -38,10 +35,6 @@ object EnhancedStorage {
     val LOGGER = LogManager.getLogger()
 
     init {
-        DistExecutor.safeRunWhenOn(
-            Dist.CLIENT,
-        ) { DistExecutor.SafeRunnable(::ClientSetup) }
-
         Registration.init()
         ESLootFunctions.register()
 

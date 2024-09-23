@@ -21,18 +21,16 @@ import net.minecraft.client.renderer.model.IBakedModel
 import net.minecraft.item.ItemModelsProperties
 import net.minecraft.item.ItemStack
 import net.minecraft.util.ResourceLocation
+import net.minecraftforge.api.distmarker.Dist
 import net.minecraftforge.client.event.ModelBakeEvent
 import net.minecraftforge.eventbus.api.SubscribeEvent
 import net.minecraftforge.fml.ModList
 import net.minecraftforge.fml.client.registry.ClientRegistry
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
-import thedarkcolour.kotlinforforge.forge.MOD_BUS
 
-class ClientSetup {
-
-    init {
-        MOD_BUS.register(this)
-    }
+@EventBusSubscriber(Dist.CLIENT, modid = EnhancedStorage.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+object ClientSetup {
 
     private val bakedModelOverrideRegistry = BakedModelOverrideRegistry()
 
