@@ -1,9 +1,12 @@
 package dev.toliner.enhancedstorage.datagen
 
+import dev.toliner.enhancedstorage.EnhancedStorage
 import edivad.extrastorage.datagen.*
 import net.minecraftforge.eventbus.api.SubscribeEvent
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber
 import net.minecraftforge.fml.event.lifecycle.GatherDataEvent
 
+@EventBusSubscriber(modid = EnhancedStorage.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 object DataGenerators {
     @SubscribeEvent
     fun gatherData(event: GatherDataEvent) {
