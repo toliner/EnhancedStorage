@@ -1,3 +1,16 @@
+import org.spongepowered.asm.gradle.plugins.MixinExtension
+
+buildscript {
+    repositories {
+        maven(url = "https://repo.spongepowered.org/maven")
+    }
+    dependencies {
+        classpath("org.spongepowered:mixingradle:0.7-SNAPSHOT")
+    }
+}
+
+apply(plugin = "org.spongepowered.mixin")
+
 plugins {
     kotlin("jvm") version "2.0.10"
     id("net.minecraftforge.gradle") version "[6.0,6.2)"
@@ -48,6 +61,7 @@ minecraft {
             property("forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP")
             property("forge.logging.console.level", "debug")
 
+            arg("-mixin.config=enhancedstorage.mixins.json")
             mods {
                 create("enhanced_storage") {
                     source(sourceSets.main.get())
@@ -59,7 +73,7 @@ minecraft {
             property("forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP")
             property("forge.logging.console.level", "debug")
 
-            args("--mod", "enhanced_storage", "--all", "--output", "../src/generated/resources/", "--existing", "../src/main/resources/")
+            args("--mod", "enhanced_storage", "--all", "--output", "../src/generated/resources/", "--existing", "../src/main/resources/", "-mixin.config=enhancedstorage.mixins.json")
 
             mods {
                 create("enhanced_storage") {
@@ -70,10 +84,23 @@ minecraft {
     }
 }
 
+configure<MixinExtension> {
+    add(sourceSets.main.get(), "enhancedstorage.refmap.json")
+}
+
 sourceSets {
     main.get().resources.srcDir("src/generated/resources")
 }
 
 kotlin {
     jvmToolchain(21)
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+        vendor.set(JvmVendorSpec.JETBRAINS)
+    }
 }

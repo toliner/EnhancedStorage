@@ -47,5 +47,3 @@ bin/
 .idea/
 run/
 run_data/
-logs/
-config/
