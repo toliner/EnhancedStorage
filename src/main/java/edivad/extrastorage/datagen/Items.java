@@ -1,6 +1,6 @@
 package edivad.extrastorage.datagen;
 
-import edivad.extrastorage.Main;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import edivad.extrastorage.items.fluid.FluidStorageType;
 import edivad.extrastorage.items.item.ItemStorageType;
 import edivad.extrastorage.setup.Registration;
@@ -15,7 +15,7 @@ public class Items extends ItemModelProvider
 
     public Items(DataGenerator generator, ExistingFileHelper existingFileHelper)
     {
-        super(generator, Main.MODID, existingFileHelper);
+        super(generator, EnhancedStorage.MOD_ID, existingFileHelper);
     }
 
     @Override

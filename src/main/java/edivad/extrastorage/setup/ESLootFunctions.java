@@ -1,6 +1,6 @@
 package edivad.extrastorage.setup;
 
-import edivad.extrastorage.Main;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import edivad.extrastorage.loottable.AdvancedCrafterLootFunction;
 import edivad.extrastorage.loottable.StorageBlockLootFunction;
 import net.minecraft.loot.LootFunctionType;
@@ -14,8 +14,8 @@ public class ESLootFunctions
 
     public static void register()
     {
-        storageBlock = Registry.register(Registry.LOOT_FUNCTION_TYPE, new ResourceLocation(Main.MODID, "storage_block"), new LootFunctionType(new StorageBlockLootFunction.Serializer()));
-        crafter = Registry.register(Registry.LOOT_FUNCTION_TYPE, new ResourceLocation(Main.MODID, "crafter"), new LootFunctionType(new AdvancedCrafterLootFunction.Serializer()));
+        storageBlock = Registry.register(Registry.LOOT_FUNCTION_TYPE, new ResourceLocation(EnhancedStorage.MOD_ID, "storage_block"), new LootFunctionType(new StorageBlockLootFunction.Serializer()));
+        crafter = Registry.register(Registry.LOOT_FUNCTION_TYPE, new ResourceLocation(EnhancedStorage.MOD_ID, "crafter"), new LootFunctionType(new AdvancedCrafterLootFunction.Serializer()));
     }
 
     public static LootFunctionType getStorageBlock()

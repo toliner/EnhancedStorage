@@ -1,6 +1,6 @@
 package edivad.extrastorage.datagen;
 
-import edivad.extrastorage.Main;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import edivad.extrastorage.items.fluid.FluidStorageType;
 import edivad.extrastorage.items.item.ItemStorageType;
 import edivad.extrastorage.setup.Registration;
@@ -76,7 +76,7 @@ public class Tag {
 
     public static class BlockTags extends BlockTagsProvider {
         public BlockTags(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-            super(generator, Main.MODID, existingFileHelper);
+            super(generator, EnhancedStorage.MOD_ID, existingFileHelper);
         }
 
         @Override
@@ -102,7 +102,7 @@ public class Tag {
 
     public static class ItemTags extends ItemTagsProvider {
         public ItemTags(DataGenerator generator, BlockTagsProvider provider, ExistingFileHelper existingFileHelper) {
-            super(generator, provider, Main.MODID, existingFileHelper);
+            super(generator, provider, EnhancedStorage.MOD_ID, existingFileHelper);
         }
 
         @Override

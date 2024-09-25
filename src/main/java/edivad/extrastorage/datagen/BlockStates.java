@@ -1,6 +1,6 @@
 package edivad.extrastorage.datagen;
 
-import edivad.extrastorage.Main;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import edivad.extrastorage.items.fluid.FluidStorageType;
 import edivad.extrastorage.items.item.ItemStorageType;
 import edivad.extrastorage.setup.Registration;
@@ -12,7 +12,7 @@ public class BlockStates extends BlockStateProvider
 {
     public BlockStates(DataGenerator gen, ExistingFileHelper exFileHelper)
     {
-        super(gen, Main.MODID, exFileHelper);
+        super(gen, EnhancedStorage.MOD_ID, exFileHelper);
     }
 
     @Override

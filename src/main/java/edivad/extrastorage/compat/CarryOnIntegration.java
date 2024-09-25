@@ -1,6 +1,6 @@
 package edivad.extrastorage.compat;
 
-import edivad.extrastorage.Main;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import edivad.extrastorage.blocks.CrafterTier;
 import edivad.extrastorage.items.fluid.FluidStorageType;
 import edivad.extrastorage.items.item.ItemStorageType;
@@ -34,6 +34,6 @@ public class CarryOnIntegration
     {
         String registryName = block.getRegistryName().toString();
         InterModComms.sendTo("carryon", "blacklistBlock", () -> registryName);
-        Main.logger.debug(Main.MODNAME + " made it impossible to use Carry On on this block -> " + registryName);
+        EnhancedStorage.INSTANCE.getLOGGER().debug(EnhancedStorage.MOD_NAME + " made it impossible to use Carry On on this block -> " + registryName);
     }
 }

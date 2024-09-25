@@ -7,7 +7,7 @@ import com.refinedmods.refinedstorage.screen.widget.sidebutton.ExactModeSideButt
 import com.refinedmods.refinedstorage.screen.widget.sidebutton.RedstoneModeSideButton;
 import com.refinedmods.refinedstorage.screen.widget.sidebutton.TypeSideButton;
 import com.refinedmods.refinedstorage.util.RenderUtils;
-import edivad.extrastorage.Main;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import edivad.extrastorage.container.AdvancedExporterContainer;
 import edivad.extrastorage.tiles.AdvancedExporterTile;
 import net.minecraft.entity.player.PlayerInventory;
@@ -51,7 +51,7 @@ public class AdvancedExporterScreen extends BaseScreen<AdvancedExporterContainer
     @Override
     public void renderBackground(MatrixStack matrixStack, int x, int y, int mouseX, int mouseY)
     {
-        bindTexture(Main.MODID, "gui/advanced_exporter_importer.png");
+        bindTexture(EnhancedStorage.MOD_ID, "gui/advanced_exporter_importer.png");
         blit(matrixStack, x, y, 0, 0, xSize, ySize);
     }
 

@@ -2,7 +2,7 @@ package edivad.extrastorage.compat;
 
 import com.refinedmods.refinedstorage.apiimpl.network.node.CrafterNetworkNode;
 import com.refinedmods.refinedstorage.tile.CrafterTile;
-import edivad.extrastorage.Main;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import edivad.extrastorage.blocks.CrafterTier;
 import edivad.extrastorage.nodes.AdvancedCrafterNetworkNode;
 import edivad.extrastorage.tiles.AdvancedCrafterTile;
@@ -53,6 +53,6 @@ public class TOPIntegration implements IProbeInfoProvider, Function<ITheOneProbe
     @Override
     public String getID()
     {
-        return Main.MODID + ":default";
+        return EnhancedStorage.MOD_ID + ":default";
     }
 }

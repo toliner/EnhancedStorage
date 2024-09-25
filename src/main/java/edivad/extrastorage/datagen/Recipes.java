@@ -3,18 +3,12 @@ package edivad.extrastorage.datagen;
 import com.refinedmods.refinedstorage.RSBlocks;
 import com.refinedmods.refinedstorage.RSItems;
 import com.refinedmods.refinedstorage.item.ProcessorItem;
-import edivad.extrastorage.Main;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import edivad.extrastorage.blocks.CrafterTier;
 import edivad.extrastorage.items.fluid.FluidStorageType;
 import edivad.extrastorage.items.item.ItemStorageType;
 import edivad.extrastorage.setup.Registration;
-import net.minecraft.block.Blocks;
-import net.minecraft.data.CookingRecipeBuilder;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.IFinishedRecipe;
-import net.minecraft.data.RecipeProvider;
-import net.minecraft.data.ShapedRecipeBuilder;
-import net.minecraft.data.ShapelessRecipeBuilder;
+import net.minecraft.data.*;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -151,7 +145,7 @@ public class Recipes extends RecipeProvider
                 .key('I', RSItems.QUARTZ_ENRICHED_IRON.get())//
                 .key('R', Items.REDSTONE)//
                 .addCriterion("has_previous_part", hasItem(previousPart))//
-                .build(consumer, new ResourceLocation(Main.MODID, "part/" + result.getRegistryName().getPath()));
+                .build(consumer, new ResourceLocation(EnhancedStorage.MOD_ID, "part/" + result.getRegistryName().getPath()));
     }
 
     private void partRecipe(Item result, Item previousPart, Consumer<IFinishedRecipe> consumer)
@@ -165,7 +159,7 @@ public class Recipes extends RecipeProvider
                 .key('I', RSItems.QUARTZ_ENRICHED_IRON.get())//
                 .key('R', Items.REDSTONE)//
                 .addCriterion("has_previous_part", hasItem(previousPart))//
-                .build(consumer, new ResourceLocation(Main.MODID, "part/" + result.getRegistryName().getPath()));
+                .build(consumer, new ResourceLocation(EnhancedStorage.MOD_ID, "part/" + result.getRegistryName().getPath()));
     }
 
     private void diskRecipe(Item result, ITag.INamedTag<Item> part, Consumer<IFinishedRecipe> consumer)
@@ -179,13 +173,13 @@ public class Recipes extends RecipeProvider
                 .key('I', RSItems.QUARTZ_ENRICHED_IRON.get())//
                 .key('R', Items.REDSTONE)//
                 .addCriterion("has_part", hasItem(part))//
-                .build(consumer, new ResourceLocation(Main.MODID, "disk/shaped/" + result.getRegistryName().getPath()));
+                .build(consumer, new ResourceLocation(EnhancedStorage.MOD_ID, "disk/shaped/" + result.getRegistryName().getPath()));
 
         ShapelessRecipeBuilder.shapelessRecipe(result)//
                 .addIngredient(RSItems.STORAGE_HOUSING.get())//
                 .addIngredient(part)//
                 .addCriterion("has_part", hasItem(part))//
-                .build(consumer, new ResourceLocation(Main.MODID, "disk/shapeless/" + result.getRegistryName().getPath()));
+                .build(consumer, new ResourceLocation(EnhancedStorage.MOD_ID, "disk/shapeless/" + result.getRegistryName().getPath()));
     }
 
     private void storageBlockRecipe(Item result, ITag.INamedTag<Item> part, Consumer<IFinishedRecipe> consumer)
@@ -199,6 +193,6 @@ public class Recipes extends RecipeProvider
                 .key('P', part)//
                 .key('E', RSItems.QUARTZ_ENRICHED_IRON.get())//
                 .addCriterion("has_part", hasItem(part))//
-                .build(consumer, new ResourceLocation(Main.MODID, "storage_block/" + result.getRegistryName().getPath()));
+                .build(consumer, new ResourceLocation(EnhancedStorage.MOD_ID, "storage_block/" + result.getRegistryName().getPath()));
     }
 }

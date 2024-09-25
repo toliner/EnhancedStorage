@@ -5,7 +5,7 @@ import com.refinedmods.refinedstorage.api.storage.disk.IStorageDisk;
 import com.refinedmods.refinedstorage.apiimpl.API;
 import com.refinedmods.refinedstorage.apiimpl.network.node.storage.ItemStorageWrapperStorageDisk;
 import com.refinedmods.refinedstorage.apiimpl.network.node.storage.StorageNetworkNode;
-import edivad.extrastorage.Main;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import edivad.extrastorage.items.item.ItemStorageType;
 import edivad.extrastorage.tiles.AdvancedStorageBlockTile;
 import net.minecraft.entity.player.PlayerEntity;
@@ -22,10 +22,10 @@ import java.util.List;
 
 public class AdvancedStorageNetworkNode extends StorageNetworkNode
 {
-    public static final ResourceLocation BLOCK_256K_ID = new ResourceLocation(Main.MODID, "block_256k");
-    public static final ResourceLocation BLOCK_1024K_ID = new ResourceLocation(Main.MODID, "block_1024k");
-    public static final ResourceLocation BLOCK_4096K_ID = new ResourceLocation(Main.MODID, "block_4096k");
-    public static final ResourceLocation BLOCK_16384K_ID = new ResourceLocation(Main.MODID, "block_16384k");
+    public static final ResourceLocation BLOCK_256K_ID = new ResourceLocation(EnhancedStorage.MOD_ID, "block_256k");
+    public static final ResourceLocation BLOCK_1024K_ID = new ResourceLocation(EnhancedStorage.MOD_ID, "block_1024k");
+    public static final ResourceLocation BLOCK_4096K_ID = new ResourceLocation(EnhancedStorage.MOD_ID, "block_4096k");
+    public static final ResourceLocation BLOCK_16384K_ID = new ResourceLocation(EnhancedStorage.MOD_ID, "block_16384k");
 
     private final ItemStorageType type;
     private IStorageDisk<ItemStack> storage;
@@ -88,7 +88,7 @@ public class AdvancedStorageNetworkNode extends StorageNetworkNode
     @Override
     public ITextComponent getTitle()
     {
-        return new TranslationTextComponent("block." + Main.MODID + ".block_" + type.getName());
+        return new TranslationTextComponent("block." + EnhancedStorage.MOD_ID + ".block_" + type.getName());
     }
 
     @Override

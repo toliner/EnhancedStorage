@@ -3,9 +3,9 @@ package edivad.extrastorage.client.screen;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.refinedmods.refinedstorage.screen.BaseScreen;
 import com.refinedmods.refinedstorage.util.RenderUtils;
-import edivad.extrastorage.Main;
-import edivad.extrastorage.container.AdvancedCrafterContainer;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import edivad.extrastorage.blocks.CrafterTier;
+import edivad.extrastorage.container.AdvancedCrafterContainer;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -33,7 +33,7 @@ public class AdvancedCrafterScreen extends BaseScreen<AdvancedCrafterContainer>
     @Override
     public void renderBackground(MatrixStack matrixStack, int x, int y, int mouseX, int mouseY)
     {
-        bindTexture(Main.MODID, "gui/" + tier.getID() + ".png");
+        bindTexture(EnhancedStorage.MOD_ID, "gui/" + tier.getID() + ".png");
         if(ySize <= 256)
             blit(matrixStack, x, y, 0, 0, xSize, ySize);
         else

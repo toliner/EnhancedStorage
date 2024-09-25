@@ -1,15 +1,15 @@
 package edivad.extrastorage.setup;
 
-import edivad.extrastorage.Main;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import edivad.extrastorage.blocks.CrafterTier;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = Main.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = EnhancedStorage.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModSetup {
 
-    public static final ItemGroup extraStorageTab = new ItemGroup(Main.MODID + "_tab") {
+    public static final ItemGroup extraStorageTab = new ItemGroup(EnhancedStorage.MOD_ID + "_tab") {
 
         @Override
         public ItemStack createIcon()

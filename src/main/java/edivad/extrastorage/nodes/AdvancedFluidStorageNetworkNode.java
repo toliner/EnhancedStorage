@@ -5,7 +5,7 @@ import com.refinedmods.refinedstorage.api.storage.disk.IStorageDisk;
 import com.refinedmods.refinedstorage.apiimpl.API;
 import com.refinedmods.refinedstorage.apiimpl.network.node.storage.FluidStorageNetworkNode;
 import com.refinedmods.refinedstorage.apiimpl.network.node.storage.FluidStorageWrapperStorageDisk;
-import edivad.extrastorage.Main;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import edivad.extrastorage.items.fluid.FluidStorageType;
 import edivad.extrastorage.tiles.AdvancedFluidStorageBlockTile;
 import net.minecraft.entity.player.PlayerEntity;
@@ -22,10 +22,10 @@ import java.util.List;
 
 public class AdvancedFluidStorageNetworkNode extends FluidStorageNetworkNode
 {
-    public static final ResourceLocation BLOCK_FLUID_16384K_ID = new ResourceLocation(Main.MODID, "block_16384k_fluid");
-    public static final ResourceLocation BLOCK_FLUID_65536K_ID = new ResourceLocation(Main.MODID, "block_65536k_fluid");
-    public static final ResourceLocation BLOCK_FLUID_262144K_ID = new ResourceLocation(Main.MODID, "block_262144k_fluid");
-    public static final ResourceLocation BLOCK_FLUID_1048576K_ID = new ResourceLocation(Main.MODID, "block_1048576k_fluid");
+    public static final ResourceLocation BLOCK_FLUID_16384K_ID = new ResourceLocation(EnhancedStorage.MOD_ID, "block_16384k_fluid");
+    public static final ResourceLocation BLOCK_FLUID_65536K_ID = new ResourceLocation(EnhancedStorage.MOD_ID, "block_65536k_fluid");
+    public static final ResourceLocation BLOCK_FLUID_262144K_ID = new ResourceLocation(EnhancedStorage.MOD_ID, "block_262144k_fluid");
+    public static final ResourceLocation BLOCK_FLUID_1048576K_ID = new ResourceLocation(EnhancedStorage.MOD_ID, "block_1048576k_fluid");
 
     private final FluidStorageType type;
     private IStorageDisk<FluidStack> storage;
@@ -88,7 +88,7 @@ public class AdvancedFluidStorageNetworkNode extends FluidStorageNetworkNode
     @Override
     public ITextComponent getTitle()
     {
-        return new TranslationTextComponent("block." + Main.MODID + ".block_" + type.getName() + "_fluid");
+        return new TranslationTextComponent("block." + EnhancedStorage.MOD_ID + ".block_" + type.getName() + "_fluid");
     }
 
     @Override

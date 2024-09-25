@@ -16,7 +16,7 @@ import com.refinedmods.refinedstorage.tile.config.IType;
 import com.refinedmods.refinedstorage.tile.config.IWhitelistBlacklist;
 import com.refinedmods.refinedstorage.util.StackUtils;
 import com.refinedmods.refinedstorage.util.WorldUtils;
-import edivad.extrastorage.Main;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import edivad.extrastorage.tiles.AdvancedImporterTile;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
@@ -32,7 +32,7 @@ import net.minecraftforge.items.IItemHandlerModifiable;
 
 public class AdvancedImporterNetworkNode extends NetworkNode implements IComparable, IWhitelistBlacklist, IType
 {
-    public static final ResourceLocation ID = new ResourceLocation(Main.MODID, "advanced_importer");
+    public static final ResourceLocation ID = new ResourceLocation(EnhancedStorage.MOD_ID, "advanced_importer");
 
     private static final String NBT_COMPARE = "Compare";
     private static final String NBT_MODE = "Mode";

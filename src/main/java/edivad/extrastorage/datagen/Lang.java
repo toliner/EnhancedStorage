@@ -1,6 +1,6 @@
 package edivad.extrastorage.datagen;
 
-import edivad.extrastorage.Main;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import edivad.extrastorage.blocks.CrafterTier;
 import edivad.extrastorage.items.fluid.FluidStorageType;
 import edivad.extrastorage.items.item.ItemStorageType;
@@ -13,13 +13,13 @@ public class Lang extends LanguageProvider
 {
     public Lang(DataGenerator gen)
     {
-        super(gen, Main.MODID, "en_us");
+        super(gen, EnhancedStorage.MOD_ID, "en_us");
     }
 
     @Override
     protected void addTranslations()
     {
-        add("itemGroup." + Main.MODID + "_tab", Main.MODNAME);
+        add("itemGroup." + EnhancedStorage.MOD_ID + "_tab", EnhancedStorage.MOD_NAME);
 
         for(ItemStorageType type : ItemStorageType.values())
         {

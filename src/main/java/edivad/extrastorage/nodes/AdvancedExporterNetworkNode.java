@@ -16,7 +16,7 @@ import com.refinedmods.refinedstorage.tile.config.IComparable;
 import com.refinedmods.refinedstorage.tile.config.IType;
 import com.refinedmods.refinedstorage.util.StackUtils;
 import com.refinedmods.refinedstorage.util.WorldUtils;
-import edivad.extrastorage.Main;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import edivad.extrastorage.tiles.AdvancedExporterTile;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
@@ -32,7 +32,7 @@ import net.minecraftforge.items.ItemHandlerHelper;
 
 public class AdvancedExporterNetworkNode extends NetworkNode implements IComparable, IType
 {
-    public static final ResourceLocation ID = new ResourceLocation(Main.MODID, "advanced_exporter");
+    public static final ResourceLocation ID = new ResourceLocation(EnhancedStorage.MOD_ID, "advanced_exporter");
 
     private static final String NBT_COMPARE = "Compare";
     private static final String NBT_TYPE = "Type";

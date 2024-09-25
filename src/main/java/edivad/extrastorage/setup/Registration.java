@@ -1,7 +1,7 @@
 package edivad.extrastorage.setup;
 
 import com.refinedmods.refinedstorage.item.blockitem.BaseBlockItem;
-import edivad.extrastorage.Main;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import edivad.extrastorage.blocks.*;
 import edivad.extrastorage.container.*;
 import edivad.extrastorage.items.AdvancedFluidStorageBlockItem;
@@ -29,10 +29,10 @@ import java.util.Map;
 
 public class Registration {
 
-    private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Main.MODID);
-    private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Main.MODID);
-    private static final DeferredRegister<TileEntityType<?>> TILES = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, Main.MODID);
-    private static final DeferredRegister<ContainerType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.CONTAINERS, Main.MODID);
+    private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, EnhancedStorage.MOD_ID);
+    private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, EnhancedStorage.MOD_ID);
+    private static final DeferredRegister<TileEntityType<?>> TILES = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, EnhancedStorage.MOD_ID);
+    private static final DeferredRegister<ContainerType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.CONTAINERS, EnhancedStorage.MOD_ID);
 
     public static final Map<ItemStorageType, RegistryObject<Item>> ITEM_STORAGE_PART = new HashMap<>();
     public static final Map<FluidStorageType, RegistryObject<Item>> FLUID_STORAGE_PART = new HashMap<>();
@@ -89,7 +89,7 @@ public class Registration {
                 TileEntity te = inv.player.getEntityWorld().getTileEntity(pos);
                 if(!(te instanceof AdvancedStorageBlockTile))
                 {
-                    Main.logger.error("Wrong type of tile entity (expected AdvancedStorageBlockTile)!");
+                    EnhancedStorage.getLOGGER().error("Wrong type of tile entity (expected AdvancedStorageBlockTile)!");
                     return null;
                 }
                 return new AdvancedStorageBlockContainer(windowId, inv.player, (AdvancedStorageBlockTile) te);
@@ -109,7 +109,7 @@ public class Registration {
                 TileEntity te = inv.player.getEntityWorld().getTileEntity(pos);
                 if(!(te instanceof AdvancedFluidStorageBlockTile))
                 {
-                    Main.logger.error("Wrong type of tile entity (expected AdvancedFluidStorageBlockTile)!");
+                    EnhancedStorage.getLOGGER().error("Wrong type of tile entity (expected AdvancedFluidStorageBlockTile)!");
                     return null;
                 }
                 return new AdvancedFluidStorageBlockContainer(windowId, inv.player, (AdvancedFluidStorageBlockTile) te);
@@ -127,7 +127,7 @@ public class Registration {
                 TileEntity te = inv.player.getEntityWorld().getTileEntity(pos);
                 if(!(te instanceof AdvancedCrafterTile))
                 {
-                    Main.logger.error("Wrong type of tile entity (expected AdvancedCrafterTile)!");
+                    EnhancedStorage.getLOGGER().error("Wrong type of tile entity (expected AdvancedCrafterTile)!");
                     return null;
                 }
                 return new AdvancedCrafterContainer(windowId, inv.player, (AdvancedCrafterTile) te);
@@ -143,7 +143,7 @@ public class Registration {
         TileEntity te = inv.player.getEntityWorld().getTileEntity(pos);
         if(!(te instanceof AdvancedExporterTile))
         {
-            Main.logger.error("Wrong type of tile entity (expected AdvancedExporterTile)!");
+            EnhancedStorage.getLOGGER().error("Wrong type of tile entity (expected AdvancedExporterTile)!");
             return null;
         }
         return new AdvancedExporterContainer(windowId, inv.player, (AdvancedExporterTile) te);
@@ -157,7 +157,7 @@ public class Registration {
         TileEntity te = inv.player.getEntityWorld().getTileEntity(pos);
         if(!(te instanceof AdvancedImporterTile))
         {
-            Main.logger.error("Wrong type of tile entity (expected AdvancedImporterTile)!");
+            EnhancedStorage.getLOGGER().error("Wrong type of tile entity (expected AdvancedImporterTile)!");
             return null;
         }
         return new AdvancedImporterContainer(windowId, inv.player, (AdvancedImporterTile) te);

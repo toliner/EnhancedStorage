@@ -15,6 +15,8 @@ import org.apache.logging.log4j.LogManager
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 object EnhancedStorage {
     const val MOD_ID = "enhanced_storage"
+    const val MOD_NAME = "Enhanced Storage"
+    @JvmStatic
     val LOGGER = LogManager.getLogger()
 
     init {

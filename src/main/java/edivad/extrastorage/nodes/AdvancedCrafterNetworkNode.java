@@ -15,7 +15,7 @@ import com.refinedmods.refinedstorage.inventory.listener.NetworkNodeInventoryLis
 import com.refinedmods.refinedstorage.item.UpgradeItem;
 import com.refinedmods.refinedstorage.util.StackUtils;
 import com.refinedmods.refinedstorage.util.WorldUtils;
-import edivad.extrastorage.Main;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import edivad.extrastorage.blocks.CrafterTier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
@@ -35,12 +35,7 @@ import net.minecraftforge.items.wrapper.CombinedInvWrapper;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 public class AdvancedCrafterNetworkNode extends NetworkNode implements ICraftingPatternContainer
 {
@@ -122,8 +117,8 @@ public class AdvancedCrafterNetworkNode extends NetworkNode implements ICrafting
                         network.getCraftingManager().invalidate();
                 }
             });
-        DEFAULT_NAME = new TranslationTextComponent("block." + Main.MODID + "." + this.tier.getID());
-        ID = new ResourceLocation(Main.MODID, tier.getID());
+        DEFAULT_NAME = new TranslationTextComponent("block." + EnhancedStorage.MOD_ID + "." + this.tier.getID());
+        ID = new ResourceLocation(EnhancedStorage.MOD_ID, tier.getID());
     }
 
     private void invalidate()
