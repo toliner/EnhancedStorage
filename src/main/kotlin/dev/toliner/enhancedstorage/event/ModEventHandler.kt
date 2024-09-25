@@ -1,6 +1,5 @@
 package dev.toliner.enhancedstorage.event
 
-import com.YTrollman.UniversalGrid.UniversalGrid
 import com.YTrollman.UniversalGrid.apiiml.network.grid.WirelessUniversalGridGridFactory
 import com.YTrollman.UniversalGrid.item.WirelessUniversalGridItem
 import com.refinedmods.refinedstorage.api.network.node.INetworkNode
@@ -41,8 +40,8 @@ object ModEventHandler {
 
     @SubscribeEvent
     fun setup(event: FMLCommonSetupEvent) {
-        UniversalGrid.NETWORK_HANDLER.register()
-        UniversalGrid.RSAPI.gridManager.add(WirelessUniversalGridGridFactory.ID, WirelessUniversalGridGridFactory())
+        EnhancedStorage.networkHandler.register()
+        API.instance().gridManager.add(WirelessUniversalGridGridFactory.ID, WirelessUniversalGridGridFactory())
 
         val networkNodeRegistry = API.instance().networkNodeRegistry
         for (tier in CrafterTier.entries) {

@@ -1,6 +1,5 @@
 package com.YTrollman.UniversalGrid.item;
 
-import com.YTrollman.UniversalGrid.UniversalGrid;
 import com.refinedmods.refinedstorage.api.network.INetwork;
 import com.refinedmods.refinedstorage.api.network.grid.GridType;
 import com.refinedmods.refinedstorage.api.network.grid.ICraftingGridListener;
@@ -11,6 +10,7 @@ import com.refinedmods.refinedstorage.api.storage.cache.IStorageCache;
 import com.refinedmods.refinedstorage.api.storage.cache.IStorageCacheListener;
 import com.refinedmods.refinedstorage.api.util.Action;
 import com.refinedmods.refinedstorage.api.util.IStackList;
+import com.refinedmods.refinedstorage.apiimpl.API;
 import com.refinedmods.refinedstorage.apiimpl.storage.cache.listener.FluidGridStorageCacheListener;
 import com.refinedmods.refinedstorage.inventory.player.PlayerSlot;
 import com.refinedmods.refinedstorage.tile.grid.WirelessGrid;
@@ -165,7 +165,7 @@ public class WirelessUniversalGrid extends WirelessGrid {
 
     @Override
     public void onCrafted(PlayerEntity player, @Nullable IStackList<ItemStack> availableItems, @Nullable IStackList<ItemStack> usedItems) {
-        UniversalGrid.RSAPI.getCraftingGridBehavior().onCrafted(this, currentRecipe, player, availableItems, usedItems);
+        API.instance().getCraftingGridBehavior().onCrafted(this, currentRecipe, player, availableItems, usedItems);
 
         INetwork network = getNetwork();
 
@@ -195,12 +195,12 @@ public class WirelessUniversalGrid extends WirelessGrid {
 
     @Override
     public void onCraftedShift(PlayerEntity player) {
-        UniversalGrid.RSAPI.getCraftingGridBehavior().onCraftedShift(this, player);
+        API.instance().getCraftingGridBehavior().onCraftedShift(this, player);
     }
 
     @Override
     public void onRecipeTransfer(PlayerEntity player, ItemStack[][] recipe) {
-        UniversalGrid.RSAPI.getCraftingGridBehavior().onRecipeTransfer(this, player, recipe);
+        API.instance().getCraftingGridBehavior().onRecipeTransfer(this, player, recipe);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package dev.toliner.enhancedstorage
 
+import com.YTrollman.UniversalGrid.registry.ModNetworkHandler
 import dev.toliner.enhancedstorage.config.Config
 import edivad.extrastorage.setup.ESLootFunctions
 import edivad.extrastorage.setup.Registration
@@ -18,6 +19,7 @@ object EnhancedStorage {
     const val MOD_NAME = "Enhanced Storage"
     @JvmStatic
     val LOGGER = LogManager.getLogger()
+    val networkHandler: ModNetworkHandler = ModNetworkHandler()
 
     init {
         Registration.init()
