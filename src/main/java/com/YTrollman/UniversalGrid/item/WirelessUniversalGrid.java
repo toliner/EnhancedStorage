@@ -1,7 +1,6 @@
 package com.YTrollman.UniversalGrid.item;
 
 import com.YTrollman.UniversalGrid.UniversalGrid;
-import com.YTrollman.UniversalGrid.config.UniversalGridConfig;
 import com.refinedmods.refinedstorage.api.network.INetwork;
 import com.refinedmods.refinedstorage.api.network.grid.GridType;
 import com.refinedmods.refinedstorage.api.network.grid.ICraftingGridListener;
@@ -16,6 +15,7 @@ import com.refinedmods.refinedstorage.apiimpl.storage.cache.listener.FluidGridSt
 import com.refinedmods.refinedstorage.inventory.player.PlayerSlot;
 import com.refinedmods.refinedstorage.tile.grid.WirelessGrid;
 import com.refinedmods.refinedstorage.util.StackUtils;
+import dev.toliner.enhancedstorage.config.UniversalGridConfig;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.CraftResultInventory;
@@ -170,7 +170,7 @@ public class WirelessUniversalGrid extends WirelessGrid {
         INetwork network = getNetwork();
 
         if (network != null) {
-            network.getNetworkItemManager().drainEnergy(player, UniversalGridConfig.UNIVERSAL_GRID_CRAFT_USAGE.get());
+            network.getNetworkItemManager().drainEnergy(player, UniversalGridConfig.INSTANCE.getCraftUsage().get());
         }
     }
 
@@ -189,7 +189,7 @@ public class WirelessUniversalGrid extends WirelessGrid {
                 }
             }
 
-            network.getNetworkItemManager().drainEnergy(player, UniversalGridConfig.UNIVERSAL_GRID_CLEAR_USAGE.get());
+            network.getNetworkItemManager().drainEnergy(player, UniversalGridConfig.INSTANCE.getClearUsage().get());
         }
     }
 

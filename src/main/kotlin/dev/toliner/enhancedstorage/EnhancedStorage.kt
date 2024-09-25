@@ -1,6 +1,6 @@
 package dev.toliner.enhancedstorage
 
-import com.YTrollman.UniversalGrid.config.Config
+import dev.toliner.enhancedstorage.config.Config
 import edivad.extrastorage.setup.ESLootFunctions
 import edivad.extrastorage.setup.Registration
 import net.minecraft.util.ResourceLocation
@@ -21,10 +21,10 @@ object EnhancedStorage {
         Registration.init()
         ESLootFunctions.register()
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.common_config)
-        Config.loadConfig(
-            Config.common_config,
-            FMLPaths.CONFIGDIR.get().resolve("universalgrid-common.toml").toString()
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.commonConfig)
+        Config.load(
+            Config.commonConfig,
+            FMLPaths.CONFIGDIR.get().resolve("$MOD_ID-common.toml").toString()
         )
     }
 
