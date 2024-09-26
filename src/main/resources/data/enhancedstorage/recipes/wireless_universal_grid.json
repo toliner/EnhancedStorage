@@ -8,7 +8,7 @@
   "key": {
     "F": { "item": "refinedstorage:wireless_fluid_grid" },
     "G": { "item": "refinedstorage:wireless_grid" },
-    "C": { "item": "refinedstorageaddons:wireless_crafting_grid" },
+    "C": { "item": "enhanced_storage:wireless_crafting_grid" },
     "D": { "item": "minecraft:diamond" },
     "Q": { "item": "refinedstorage:quartz_enriched_iron" }
   },
