@@ -8,6 +8,8 @@ import com.refinedmods.refinedstorage.apiimpl.network.node.NetworkNode
 import com.refinedmods.refinedstorage.tile.BaseTile
 import com.refinedmods.refinedstorage.tile.data.TileDataManager
 import com.refinedmods.refinedstorage.tile.data.TileDataParameter
+import com.refinedmods.refinedstorageaddons.apiimpl.network.grid.WirelessCraftingGridGridFactory
+import com.refinedmods.refinedstorageaddons.item.WirelessCraftingGridItem
 import dev.toliner.enhancedstorage.EnhancedStorage
 import edivad.extrastorage.blocks.CrafterTier
 import edivad.extrastorage.compat.CarryOnIntegration
@@ -36,12 +38,15 @@ object ModEventHandler {
     fun onRegisterItems(e: RegistryEvent.Register<Item?>) {
         e.registry.register(WirelessUniversalGridItem(WirelessUniversalGridItem.Type.NORMAL))
         e.registry.register(WirelessUniversalGridItem(WirelessUniversalGridItem.Type.CREATIVE))
+        e.registry.register(WirelessCraftingGridItem(WirelessCraftingGridItem.Type.NORMAL))
+        e.registry.register(WirelessCraftingGridItem(WirelessCraftingGridItem.Type.CREATIVE))
     }
 
     @SubscribeEvent
     fun setup(event: FMLCommonSetupEvent) {
         EnhancedStorage.networkHandler.register()
         API.instance().gridManager.add(WirelessUniversalGridGridFactory.ID, WirelessUniversalGridGridFactory())
+        API.instance().gridManager.add(WirelessCraftingGridGridFactory.ID, WirelessCraftingGridGridFactory())
 
         val networkNodeRegistry = API.instance().networkNodeRegistry
         for (tier in CrafterTier.values()) {
