@@ -1,13 +1,13 @@
 package com.refinedmods.refinedstorageaddons.item.group;
 
-import com.refinedmods.refinedstorageaddons.RSAddons;
 import com.refinedmods.refinedstorageaddons.RSAddonsItems;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
 public class MainItemGroup extends ItemGroup {
     public MainItemGroup() {
-        super(RSAddons.ID);
+        super(EnhancedStorage.MOD_ID);
     }
 
     @Override

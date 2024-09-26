@@ -4,8 +4,8 @@ import com.refinedmods.refinedstorage.api.network.grid.GridFactoryType;
 import com.refinedmods.refinedstorage.api.network.grid.IGrid;
 import com.refinedmods.refinedstorage.api.network.grid.IGridFactory;
 import com.refinedmods.refinedstorage.inventory.player.PlayerSlot;
-import com.refinedmods.refinedstorageaddons.RSAddons;
 import com.refinedmods.refinedstorageaddons.item.WirelessCraftingGrid;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 
 public class WirelessCraftingGridGridFactory implements IGridFactory {
-    public static final ResourceLocation ID = new ResourceLocation(RSAddons.ID, "wireless_crafting_grid");
+    public static final ResourceLocation ID = new ResourceLocation(EnhancedStorage.MOD_ID, "wireless_crafting_grid");
 
     @Nullable
     @Override

@@ -6,6 +6,7 @@ import com.refinedmods.refinedstorage.inventory.player.PlayerSlot;
 import com.refinedmods.refinedstorage.item.NetworkItem;
 import com.refinedmods.refinedstorageaddons.RSAddons;
 import com.refinedmods.refinedstorageaddons.apiimpl.network.item.WirelessCraftingGridNetworkItem;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 
@@ -28,7 +29,7 @@ public class WirelessCraftingGridItem extends NetworkItem {
 
         this.type = type;
 
-        this.setRegistryName(RSAddons.ID, (type == Type.CREATIVE ? "creative_" : "") + "wireless_crafting_grid");
+        this.setRegistryName(EnhancedStorage.MOD_ID, (type == Type.CREATIVE ? "creative_" : "") + "wireless_crafting_grid");
     }
 
     public Type getType() {

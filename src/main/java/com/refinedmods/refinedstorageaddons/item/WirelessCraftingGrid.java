@@ -6,6 +6,7 @@ import com.refinedmods.refinedstorage.api.network.grid.ICraftingGridListener;
 import com.refinedmods.refinedstorage.api.network.security.Permission;
 import com.refinedmods.refinedstorage.api.util.Action;
 import com.refinedmods.refinedstorage.api.util.IStackList;
+import com.refinedmods.refinedstorage.apiimpl.API;
 import com.refinedmods.refinedstorage.inventory.player.PlayerSlot;
 import com.refinedmods.refinedstorage.tile.grid.WirelessGrid;
 import com.refinedmods.refinedstorage.util.StackUtils;
@@ -123,7 +124,7 @@ public class WirelessCraftingGrid extends WirelessGrid {
 
     @Override
     public void onCrafted(PlayerEntity player, @Nullable IStackList<ItemStack> availableItems, @Nullable IStackList<ItemStack> usedItems) {
-        RSAddons.RSAPI.getCraftingGridBehavior().onCrafted(this, currentRecipe, player, availableItems, usedItems);
+        API.instance().getCraftingGridBehavior().onCrafted(this, currentRecipe, player, availableItems, usedItems);
 
         INetwork network = getNetwork();
 
@@ -153,12 +154,12 @@ public class WirelessCraftingGrid extends WirelessGrid {
 
     @Override
     public void onCraftedShift(PlayerEntity player) {
-        RSAddons.RSAPI.getCraftingGridBehavior().onCraftedShift(this, player);
+        API.instance().getCraftingGridBehavior().onCraftedShift(this, player);
     }
 
     @Override
     public void onRecipeTransfer(PlayerEntity player, ItemStack[][] recipe) {
-        RSAddons.RSAPI.getCraftingGridBehavior().onRecipeTransfer(this, player, recipe);
+        API.instance().getCraftingGridBehavior().onRecipeTransfer(this, player, recipe);
     }
 
     @Override
