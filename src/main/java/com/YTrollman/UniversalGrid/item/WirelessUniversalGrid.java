@@ -75,7 +75,7 @@ public class WirelessUniversalGrid extends WirelessGrid {
 
     @Override
     public ITextComponent getTitle() {
-        return new TranslationTextComponent("gui.universalgrid.universal_grid");
+        return new TranslationTextComponent("gui.enhanced_storage.universal_grid");
     }
 
     @Override
