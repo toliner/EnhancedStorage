@@ -64,5 +64,8 @@
   "gui.enhanced_storage.universal_grid": "Universal Grid",
   "sidebutton.enhanced_storage.universal_grid.switch.0" : "Crafting Grid",
   "sidebutton.enhanced_storage.universal_grid.switch.1" : "Fluid Grid",
-  "sidebutton.enhanced_storage.universal_grid.switch.2" : "Grid"
+  "sidebutton.enhanced_storage.universal_grid.switch.2" : "Grid",
+  "item.enhanced_storage.wireless_crafting_grid": "Wireless Crafting Grid",
+  "item.enhanced_storage.creative_wireless_crafting_grid": "Creative Wireless Crafting Grid",
+  "key.enhanced_storage.openWirelessCraftingGrid": "Open Wireless Crafting Grid"
 }
