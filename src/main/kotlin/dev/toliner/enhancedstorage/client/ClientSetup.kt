@@ -55,7 +55,7 @@ object ClientSetup {
         val crafterScreen = if (ModList.get().isLoaded("quark")) {
             ::AdvancedCrafterScreenQuark
         } else ::AdvancedCrafterScreen
-        for (tier in CrafterTier.entries) {
+        for (tier in CrafterTier.values()) {
             ScreenManager.registerFactory(
                 Registration.CRAFTER_CONTAINER.getValue(tier).get(),
                 crafterScreen
@@ -85,13 +85,13 @@ object ClientSetup {
         RenderTypeLookup.setRenderLayer(Registration.ADVANCED_IMPORTER.get(), RenderType.getCutout())
 
         // register renderers for storage blocks
-        for (type in ItemStorageType.entries) {
+        for (type in ItemStorageType.values()) {
             ScreenManager.registerFactory(
                 Registration.ITEM_STORAGE_CONTAINER.getValue(type).get(),
                 ::AdvancedStorageBlockScreen
             )
         }
-        for (type in FluidStorageType.entries) {
+        for (type in FluidStorageType.values()) {
             ScreenManager.registerFactory(
                 Registration.FLUID_STORAGE_CONTAINER.getValue(type).get(),
                 ::AdvancedFluidStorageBlockScreen

@@ -44,7 +44,7 @@ object ModEventHandler {
         API.instance().gridManager.add(WirelessUniversalGridGridFactory.ID, WirelessUniversalGridGridFactory())
 
         val networkNodeRegistry = API.instance().networkNodeRegistry
-        for (tier in CrafterTier.entries) {
+        for (tier in CrafterTier.values()) {
             networkNodeRegistry.add(
                 ResourceLocation(EnhancedStorage.MOD_ID, tier.id)
             ) { tag: CompoundNBT, world: World, pos: BlockPos ->
@@ -54,7 +54,7 @@ object ModEventHandler {
                 TileDataManager.registerParameter(parameter)
             }
         }
-        for (type in ItemStorageType.entries) {
+        for (type in ItemStorageType.values()) {
             networkNodeRegistry.add(
                 ResourceLocation(EnhancedStorage.MOD_ID, "block_" + type.getName())
             ) { tag: CompoundNBT, world: World, pos: BlockPos ->
@@ -64,7 +64,7 @@ object ModEventHandler {
                 TileDataManager.registerParameter(parameter)
             }
         }
-        for (type in FluidStorageType.entries) {
+        for (type in FluidStorageType.values()) {
             networkNodeRegistry.add(
                 ResourceLocation(EnhancedStorage.MOD_ID, "block_" + type.getName() + "_fluid")
             ) { tag: CompoundNBT, world: World, pos: BlockPos ->
