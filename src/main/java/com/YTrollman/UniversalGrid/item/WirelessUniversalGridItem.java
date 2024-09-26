@@ -1,7 +1,6 @@
 package com.YTrollman.UniversalGrid.item;
 
 import com.YTrollman.UniversalGrid.apiiml.network.item.WirelessUniversalGridNetworkItem;
-import com.YTrollman.UniversalGrid.registry.ItemGroupUniversalGrid;
 import com.refinedmods.refinedstorage.api.network.INetwork;
 import com.refinedmods.refinedstorage.api.network.item.INetworkItem;
 import com.refinedmods.refinedstorage.api.network.item.INetworkItemManager;
@@ -29,7 +28,7 @@ public class WirelessUniversalGridItem extends NetworkItem {
     private final Type type;
 
     public WirelessUniversalGridItem(Type type) {
-        super(new Properties().group(ItemGroupUniversalGrid.UNIVERSAL_GRID).maxStackSize(1),
+        super(new Properties().group(EnhancedStorage.getEnhancedStorageGroup()).maxStackSize(1),
                 type == Type.CREATIVE,
                 () -> UniversalGridConfig.INSTANCE.getCapacity().get());
 

@@ -4,7 +4,6 @@ import com.refinedmods.refinedstorage.api.network.item.INetworkItem;
 import com.refinedmods.refinedstorage.api.network.item.INetworkItemManager;
 import com.refinedmods.refinedstorage.inventory.player.PlayerSlot;
 import com.refinedmods.refinedstorage.item.NetworkItem;
-import com.refinedmods.refinedstorageaddons.RSAddons;
 import com.refinedmods.refinedstorageaddons.apiimpl.network.item.WirelessCraftingGridNetworkItem;
 import dev.toliner.enhancedstorage.EnhancedStorage;
 import dev.toliner.enhancedstorage.config.UniversalGridConfig;
@@ -23,7 +22,7 @@ public class WirelessCraftingGridItem extends NetworkItem {
 
     public WirelessCraftingGridItem(Type type) {
         super(
-            new Properties().group(RSAddons.MAIN_GROUP).maxStackSize(1),
+            new Properties().group(EnhancedStorage.getEnhancedStorageGroup()).maxStackSize(1),
             type == Type.CREATIVE,
             () -> UniversalGridConfig.INSTANCE.getCapacity().get()
         );

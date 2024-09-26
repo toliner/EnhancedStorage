@@ -54,7 +54,7 @@ public class Registration {
     public static final Map<CrafterTier, RegistryObject<TileEntityType<AdvancedCrafterTile>>> CRAFTER_TILE = new HashMap<>();
     public static final Map<CrafterTier, RegistryObject<ContainerType<AdvancedCrafterContainer>>> CRAFTER_CONTAINER = new HashMap<>();
 
-    private static Item.Properties GLOBAL_PROPERTIES = new Item.Properties().group(ModSetup.extraStorageTab).maxStackSize(64);
+    private static Item.Properties GLOBAL_PROPERTIES = new Item.Properties().group(EnhancedStorage.getEnhancedStorageGroup()).maxStackSize(64);
 
     public static void init()
     {

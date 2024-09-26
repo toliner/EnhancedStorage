@@ -7,7 +7,7 @@ import com.refinedmods.refinedstorage.api.storage.disk.IStorageDiskProvider;
 import com.refinedmods.refinedstorage.api.storage.disk.StorageDiskSyncData;
 import com.refinedmods.refinedstorage.apiimpl.API;
 import com.refinedmods.refinedstorage.render.Styles;
-import edivad.extrastorage.setup.ModSetup;
+import dev.toliner.enhancedstorage.EnhancedStorage;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -32,7 +32,7 @@ public abstract class ExpandedStorageDisk extends Item implements IStorageDiskPr
 
     public ExpandedStorageDisk()
     {
-        super(new Properties().group(ModSetup.extraStorageTab).maxStackSize(1));
+        super(new Properties().group(EnhancedStorage.getEnhancedStorageGroup()).maxStackSize(1));
     }
 
     @Override
