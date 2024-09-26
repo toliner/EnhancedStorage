@@ -6,6 +6,7 @@ import com.refinedmods.refinedstorage.apiimpl.API
 import com.refinedmods.refinedstorage.item.property.NetworkItemPropertyGetter
 import com.refinedmods.refinedstorage.render.BakedModelOverrideRegistry
 import com.refinedmods.refinedstorage.render.model.FullbrightBakedModel
+import com.refinedmods.refinedstorageaddons.RSAddonsItems
 import dev.toliner.enhancedstorage.EnhancedStorage
 import edivad.extrastorage.blocks.CrafterTier
 import edivad.extrastorage.client.screen.*
@@ -45,6 +46,16 @@ object ClientSetup {
         )
         ItemModelsProperties.registerProperty(
             ModItems.CREATIVE_WIRELESS_UNIVERSAL_GRID,
+            ResourceLocation("connected"),
+            NetworkItemPropertyGetter()
+        )
+        ItemModelsProperties.registerProperty(
+            RSAddonsItems.WIRELESS_CRAFTING_GRID,
+            ResourceLocation("connected"),
+            NetworkItemPropertyGetter()
+        )
+        ItemModelsProperties.registerProperty(
+            RSAddonsItems.CREATIVE_WIRELESS_CRAFTING_GRID,
             ResourceLocation("connected"),
             NetworkItemPropertyGetter()
         )

@@ -3,6 +3,7 @@ package dev.toliner.enhancedstorage.event
 import com.YTrollman.UniversalGrid.registry.ModItems
 import com.YTrollman.UniversalGrid.registry.ModKeyBindings
 import com.refinedmods.refinedstorage.screen.KeyInputListener
+import com.refinedmods.refinedstorageaddons.RSAddonsItems
 import dev.toliner.enhancedstorage.EnhancedStorage
 import net.minecraft.client.Minecraft
 import net.minecraftforge.client.event.InputEvent.KeyInputEvent
@@ -17,7 +18,9 @@ object ForgeEventHandler {
             if (ModKeyBindings.OPEN_WIRELESS_UNIVERSAL_GRID.isKeyDown) {
                 KeyInputListener.findAndOpen(
                     ModItems.WIRELESS_UNIVERSAL_GRID,
-                    ModItems.CREATIVE_WIRELESS_UNIVERSAL_GRID
+                    ModItems.CREATIVE_WIRELESS_UNIVERSAL_GRID,
+                    RSAddonsItems.WIRELESS_CRAFTING_GRID,
+                    RSAddonsItems.CREATIVE_WIRELESS_CRAFTING_GRID
                 )
             }
         }
