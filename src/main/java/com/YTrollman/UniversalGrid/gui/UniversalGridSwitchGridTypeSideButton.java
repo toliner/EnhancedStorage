@@ -20,11 +20,11 @@ public class UniversalGridSwitchGridTypeSideButton extends SideButton {
     }
 
     public String getTooltip() {
-        return I18n.format("sidebutton.universalgrid.universal_grid.switch." + gridType);
+        return I18n.format("sidebutton.enhanced_storage.universal_grid.switch." + gridType);
     }
 
     protected void renderButtonIcon(MatrixStack matrixStack, int x, int y) {
-        this.screen.bindTexture("universalgrid", "icons.png");
+        this.screen.bindTexture("enhanced_storage", "icons.png");
         this.screen.blit(matrixStack, x, y, 0, gridType * 16, 16, 16);
     }
 

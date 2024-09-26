@@ -55,5 +55,14 @@
   "itemGroup.enhanced_storage_tab": "Enhanced Storage",
   "tooltip.enhanced_storage.baseSpeed": "Base speed: %sx",
   "tooltip.enhanced_storage.holdShift": "Hold Shift for details",
-  "tooltip.enhanced_storage.slotCrafting": "Slots for patterns: %s"
+  "enhanced_storage_todo": "TODO: Move this to generator",
+  "tooltip.enhanced_storage.slotCrafting": "Slots for patterns: %s",
+  "itemGroup.universalgrid" : "Universal Grid",
+  "item.enhanced_storage.wireless_universal_grid": "Wireless Universal Grid",
+  "item.enhanced_storage.creative_wireless_universal_grid": "Creative Wireless Universal Grid",
+  "key.enhanced_storage.openWirelessUniversalGrid": "Open Wireless Universal Grid",
+  "gui.enhanced_storage.universal_grid": "Universal Grid",
+  "sidebutton.enhanced_storage.universal_grid.switch.0" : "Crafting Grid",
+  "sidebutton.enhanced_storage.universal_grid.switch.1" : "Fluid Grid",
+  "sidebutton.enhanced_storage.universal_grid.switch.2" : "Grid"
 }
