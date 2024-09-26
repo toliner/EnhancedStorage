@@ -1,4 +1,7 @@
 import org.spongepowered.asm.gradle.plugins.MixinExtension
+import java.time.Instant
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 
 buildscript {
     repositories {
@@ -18,7 +21,7 @@ plugins {
 }
 
 group = "dev.toliner"
-version = "1.0-SNAPSHOT"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
@@ -102,5 +105,19 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(21))
         vendor.set(JvmVendorSpec.JETBRAINS)
+    }
+}
+
+tasks.jar {
+    manifest {
+        attributes(
+            "Specification-Title" to "enhancedstorage",
+            "Specification-Vendor" to "toliner",
+            "Specification-Version" to "1",
+            "Implementation-Title" to project.name,
+            "Implementation-Version" to project.version,
+            "Implementation-Vendor" to "toliner",
+            "Implementation-Timestamp" to DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneId.systemDefault()).format(Instant.now()),
+        )
     }
 }
