@@ -111,13 +111,14 @@ java {
 tasks.jar {
     manifest {
         attributes(
-            "Specification-Title" to "enhancedstorage",
+            "Specification-Title" to "enhanced_storage",
             "Specification-Vendor" to "toliner",
             "Specification-Version" to "1",
             "Implementation-Title" to project.name,
             "Implementation-Version" to project.version,
             "Implementation-Vendor" to "toliner",
             "Implementation-Timestamp" to DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneId.systemDefault()).format(Instant.now()),
+            "MixinConfigs" to "enhancedstorage.mixins.json"
         )
     }
 }
