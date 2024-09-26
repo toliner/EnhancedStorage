@@ -10,7 +10,7 @@ import com.refinedmods.refinedstorage.apiimpl.API;
 import com.refinedmods.refinedstorage.inventory.player.PlayerSlot;
 import com.refinedmods.refinedstorage.tile.grid.WirelessGrid;
 import com.refinedmods.refinedstorage.util.StackUtils;
-import com.refinedmods.refinedstorageaddons.RSAddons;
+import dev.toliner.enhancedstorage.config.UniversalGridConfig;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.CraftResultInventory;
 import net.minecraft.inventory.CraftingInventory;
@@ -129,7 +129,7 @@ public class WirelessCraftingGrid extends WirelessGrid {
         INetwork network = getNetwork();
 
         if (network != null) {
-            network.getNetworkItemManager().drainEnergy(player, RSAddons.SERVER_CONFIG.getWirelessCraftingGrid().getCraftUsage());
+            network.getNetworkItemManager().drainEnergy(player, UniversalGridConfig.INSTANCE.getCraftUsage().get());
         }
     }
 
@@ -148,7 +148,7 @@ public class WirelessCraftingGrid extends WirelessGrid {
                 }
             }
 
-            network.getNetworkItemManager().drainEnergy(player, RSAddons.SERVER_CONFIG.getWirelessCraftingGrid().getClearUsage());
+            network.getNetworkItemManager().drainEnergy(player, UniversalGridConfig.INSTANCE.getClearUsage().get());
         }
     }
 

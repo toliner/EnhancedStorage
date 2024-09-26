@@ -7,6 +7,7 @@ import com.refinedmods.refinedstorage.item.NetworkItem;
 import com.refinedmods.refinedstorageaddons.RSAddons;
 import com.refinedmods.refinedstorageaddons.apiimpl.network.item.WirelessCraftingGridNetworkItem;
 import dev.toliner.enhancedstorage.EnhancedStorage;
+import dev.toliner.enhancedstorage.config.UniversalGridConfig;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 
@@ -24,7 +25,7 @@ public class WirelessCraftingGridItem extends NetworkItem {
         super(
             new Properties().group(RSAddons.MAIN_GROUP).maxStackSize(1),
             type == Type.CREATIVE,
-            () -> RSAddons.SERVER_CONFIG.getWirelessCraftingGrid().getCapacity()
+            () -> UniversalGridConfig.INSTANCE.getCapacity().get()
         );
 
         this.type = type;

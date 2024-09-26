@@ -7,9 +7,9 @@ import com.refinedmods.refinedstorage.api.network.security.Permission;
 import com.refinedmods.refinedstorage.apiimpl.API;
 import com.refinedmods.refinedstorage.inventory.player.PlayerSlot;
 import com.refinedmods.refinedstorage.util.WorldUtils;
-import com.refinedmods.refinedstorageaddons.RSAddons;
 import com.refinedmods.refinedstorageaddons.apiimpl.network.grid.WirelessCraftingGridGridFactory;
 import com.refinedmods.refinedstorageaddons.item.WirelessCraftingGridItem;
+import dev.toliner.enhancedstorage.config.UniversalGridConfig;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -39,10 +39,10 @@ public class WirelessCraftingGridNetworkItem implements INetworkItem {
     public boolean onOpen(INetwork network) {
         IEnergyStorage energy = stack.getCapability(CapabilityEnergy.ENERGY, null).orElse(null);
 
-        if (RSAddons.SERVER_CONFIG.getWirelessCraftingGrid().getUseEnergy() &&
+        if (UniversalGridConfig.INSTANCE.getUseEnergy().get() &&
             ((WirelessCraftingGridItem) stack.getItem()).getType() != WirelessCraftingGridItem.Type.CREATIVE &&
             energy != null &&
-            energy.getEnergyStored() <= RSAddons.SERVER_CONFIG.getWirelessCraftingGrid().getOpenUsage()) {
+            energy.getEnergyStored() <= UniversalGridConfig.INSTANCE.getOpenUsage().get()) {
             sendOutOfEnergyMessage();
 
             return false;
@@ -56,14 +56,14 @@ public class WirelessCraftingGridNetworkItem implements INetworkItem {
 
         API.instance().getGridManager().openGrid(WirelessCraftingGridGridFactory.ID, (ServerPlayerEntity) player, stack, slot);
 
-        drainEnergy(RSAddons.SERVER_CONFIG.getWirelessCraftingGrid().getOpenUsage());
+        drainEnergy(UniversalGridConfig.INSTANCE.getOpenUsage().get());
 
         return true;
     }
 
     @Override
     public void drainEnergy(int energy) {
-        if (RSAddons.SERVER_CONFIG.getWirelessCraftingGrid().getUseEnergy() && ((WirelessCraftingGridItem) stack.getItem()).getType() != WirelessCraftingGridItem.Type.CREATIVE) {
+        if (UniversalGridConfig.INSTANCE.getUseEnergy().get() && ((WirelessCraftingGridItem) stack.getItem()).getType() != WirelessCraftingGridItem.Type.CREATIVE) {
             stack.getCapability(CapabilityEnergy.ENERGY).ifPresent(energyStorage -> {
                 energyStorage.extractEnergy(energy, false);
 
